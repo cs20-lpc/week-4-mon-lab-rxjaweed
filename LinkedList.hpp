@@ -3,15 +3,19 @@
 
 #include "List.hpp"
 #include <iostream>
+#include <stdexcept>
 using namespace std;
 
 template <typename T>
 class LinkedList : public List<T> {
     protected:
+        int length;
         // represents an element in the linked list
-        struct Node {
+        struct Node 
+        {
             T value;
             Node* next;
+            
 
             Node(T v = T(), Node* n = nullptr)
             : value(v), next(n) { }
